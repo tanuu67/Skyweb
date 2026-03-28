@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyWeb Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+/* HEADER */
+header {
+    display:flex;
+    justify-content:space-between;
+    padding:15px 40px;
+    background:#0f172a;
+    position:sticky;
+    top:0;
+}
+.logo {
+    font-weight:bold;
+    font-size:20px;
+    color:#a855f7;
+}
+nav a {
+    margin:10px;
+    text-decoration:none;
+    color:white;
+}
+
+/* HERO */
+.hero {
+    text-align:center;
+    padding:100px 20px;
+    background: radial-gradient(circle at top, #7c3aed, #0f172a);
+}
+
+.hero h1 {
+    font-size:42px;
+    background:linear-gradient(90deg,#a855f7,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    border-radius:8px;
+    background:linear-gradient(90deg,#a855f7,#ec4899);
+    color:white;
+    text-decoration:none;
+}
+
+/* SECTION */
+.section {
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* SERVICES */
+.services {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.card {
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    width:260px;
+    margin:15px;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+}
+.card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #a855f7;
+}
+
+/* PORTFOLIO */
+.portfolio img {
+    width:280px;
+    margin:10px;
+    border-radius:10px;
+}
+
+/* TESTIMONIAL */
+.review {
+    background:rgba(255,255,255,0.05);
+    margin:10px;
+    padding:15px;
+    border-radius:10px;
+}
+
+/* FORM */
+input,textarea {
+    width:250px;
+    padding:10px;
+    margin:5px;
+    border-radius:5px;
+    border:none;
+}
+
+/* CONTACT */
+.contact {
+    background:#020617;
+    padding:50px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.services,.portfolio{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🚀 SkyWeb Solutions</div>
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Build Your Digital Empire 🚀</h1>
+<p>Website • SEO • Social Media • Branding</p>
+<a class="btn" href="https://wa.me/918264804667">Get Free Demo</a>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>🌐 Website Development</h3>
+<p>High converting premium websites.</p>
+</div>
+
+<div class="card">
+<h3>📈 SEO</h3>
+<p>Rank your business on Google.</p>
+</div>
+
+<div class="card">
+<h3>📱 Social Media</h3>
+<p>Grow your Instagram & Facebook.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Graphic Designing</h3>
+<p>Branding, posters & creatives.</p>
+</div>
+
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+<h2>Our Work</h2>
+
+<div class="portfolio">
+<img src="https://picsum.photos/300/200?1">
+<img src="https://picsum.photos/300/200?2">
+<img src="https://picsum.photos/300/200?3">
+</div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section">
+<h2>Client Reviews</h2>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Best service ever</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Highly professional</div>
+</section>
+
+<!-- FORM -->
+<section class="section">
+<h2>Get Your Website Now</h2>
+
+<form onsubmit="sendWhatsApp(); return false;">
+<input type="text" id="name" placeholder="Your Name"><br>
+<input type="text" id="phone" placeholder="Phone"><br>
+<textarea id="msg" placeholder="Requirement"></textarea><br>
+
+<button class="btn">Send on WhatsApp</button>
+</form>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<p>📞 8264804667</p>
+</section>
+
+<footer style="text-align:center;padding:15px;background:#020617;">
+© 2026 SkyWeb Solutions
+</footer>
+
+<a href="https://wa.me/918264804667" class="whatsapp">💬</a>
+
+<script>
+function sendWhatsApp(){
+let n=document.getElementById("name").value;
+let p=document.getElementById("phone").value;
+let m=document.getElementById("msg").value;
+
+window.open(`https://wa.me/918264804667?text=Name:${n}%0APhone:${p}%0ARequirement:${m}`);
+}
+</script>
+
+</body>
+</html>
