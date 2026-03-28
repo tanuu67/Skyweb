@@ -25,8 +25,8 @@ header {
     top:0;
 }
 .logo {
-    font-weight:bold;
     font-size:20px;
+    font-weight:bold;
     color:#a855f7;
 }
 nav a {
@@ -41,14 +41,12 @@ nav a {
     padding:100px 20px;
     background: radial-gradient(circle at top, #7c3aed, #0f172a);
 }
-
 .hero h1 {
     font-size:42px;
     background:linear-gradient(90deg,#a855f7,#ec4899);
     -webkit-background-clip:text;
     color:transparent;
 }
-
 .btn {
     display:inline-block;
     margin-top:20px;
@@ -86,9 +84,13 @@ nav a {
 }
 
 /* PORTFOLIO */
-.portfolio img {
-    width:280px;
-    margin:10px;
+.portfolio {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.portfolio .card img {
+    width:100%;
     border-radius:10px;
 }
 
@@ -101,8 +103,8 @@ nav a {
 }
 
 /* FORM */
-input,textarea {
-    width:250px;
+input, textarea {
+    width:260px;
     padding:10px;
     margin:5px;
     border-radius:5px;
@@ -186,36 +188,58 @@ input,textarea {
 <h2>Our Work</h2>
 
 <div class="portfolio">
+
+<div class="card">
 <img src="https://picsum.photos/300/200?1">
+<h3>Business Website</h3>
+<p>Modern website for local business</p>
+</div>
+
+<div class="card">
 <img src="https://picsum.photos/300/200?2">
+<h3>SEO Project</h3>
+<p>Ranked on Google</p>
+</div>
+
+<div class="card">
 <img src="https://picsum.photos/300/200?3">
+<h3>Social Media Growth</h3>
+<p>Instagram growth strategy</p>
+</div>
+
 </div>
 </section>
 
 <!-- TESTIMONIAL -->
 <section class="section">
 <h2>Client Reviews</h2>
-<div class="review">⭐️⭐️⭐️⭐️⭐️ Best service ever</div>
-<div class="review">⭐️⭐️⭐️⭐️⭐️ Highly professional</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Amazing website service</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Helped my business grow</div>
 </section>
 
-<!-- FORM -->
+<!-- FORM (EMAIL WORKING) -->
 <section class="section">
-<h2>Get Your Website Now</h2>
+<h2>Get Free Consultation</h2>
 
-<form onsubmit="sendWhatsApp(); return false;">
-<input type="text" id="name" placeholder="Your Name"><br>
-<input type="text" id="phone" placeholder="Phone"><br>
-<textarea id="msg" placeholder="Requirement"></textarea><br>
+<form action="https://formsubmit.co/starunsharma67@gmail.com" method="POST">
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="text" name="phone" placeholder="Phone Number" required><br>
+<input type="email" name="email" placeholder="Email"><br>
+<textarea name="message" placeholder="Your Requirement"></textarea><br>
 
-<button class="btn">Send on WhatsApp</button>
+<button class="btn">Submit</button>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Lead from SkyWeb">
 </form>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
 <p>📞 8264804667</p>
+<p>📧 starunsharma67@gmail.com</p>
 </section>
 
 <footer style="text-align:center;padding:15px;background:#020617;">
@@ -223,16 +247,6 @@ input,textarea {
 </footer>
 
 <a href="https://wa.me/918264804667" class="whatsapp">💬</a>
-
-<script>
-function sendWhatsApp(){
-let n=document.getElementById("name").value;
-let p=document.getElementById("phone").value;
-let m=document.getElementById("msg").value;
-
-window.open(`https://wa.me/918264804667?text=Name:${n}%0APhone:${p}%0ARequirement:${m}`);
-}
-</script>
 
 </body>
 </html>
