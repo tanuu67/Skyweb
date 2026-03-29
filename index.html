@@ -67,18 +67,6 @@
         .card:hover { transform: translateY(-10px); border-color: #a855f7; background: rgba(255,255,255,0.06); }
         .card i { font-size: 35px; color: #a855f7; margin-bottom: 15px; }
 
-        /* TESTIMONIALS SLIDER */
-        .slider-container { overflow: hidden; padding: 20px 0; background: rgba(0,0,0,0.2); margin-top: 30px; }
-        .slider-track { display: flex; width: 200%; animation: scroll 20s linear infinite; }
-        .review-card {
-            background: #1e293b; padding: 20px; margin: 0 10px; border-radius: 15px;
-            width: 280px; text-align: left; border: 1px solid rgba(255,255,255,0.05);
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
         /* CONTACT FORM */
         .contact-box {
             max-width: 450px; margin: 0 auto; background: #1e293b;
@@ -97,18 +85,31 @@
             text-decoration: none; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         .bot-trigger {
-            position: fixed; bottom: 25px; left: 25px; background: #ec4899;
+            position: fixed; bottom: 25px; left: 25px; background: #a855f7;
             width: 55px; height: 55px; border-radius: 50%; display: flex;
             justify-content: center; align-items: center; font-size: 25px; color: white;
-            cursor: pointer; z-index: 1000;
+            cursor: pointer; z-index: 1000; animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(168, 85, 247, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
         }
 
         /* CHAT WINDOW */
         #bot-window {
-            position: fixed; bottom: 90px; left: 25px; width: 280px;
-            background: #1e293b; border-radius: 15px; border: 1px solid #ec4899;
+            position: fixed; bottom: 90px; left: 25px; width: 300px;
+            background: #1e293b; border-radius: 15px; border: 1px solid #a855f7;
             display: none; flex-direction: column; overflow: hidden; z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
+
+        .chat-header { background: linear-gradient(90deg, #a855f7, #ec4899); padding: 12px; font-weight: bold; display: flex; justify-content: space-between; }
+        .chat-body { height: 280px; padding: 15px; overflow-y: auto; font-size: 13px; background: #0f172a; display: flex; flex-direction: column; gap: 10px; }
+        .bot-msg { background: #334155; padding: 10px; border-radius: 12px 12px 12px 0; align-self: flex-start; max-width: 85%; }
+        .option-btn { width: 100%; background: transparent; color: #cbd5e1; border: 1px solid #a855f7; padding: 8px; cursor: pointer; border-radius: 8px; text-align: left; transition: 0.3s; }
+        .option-btn:hover { background: rgba(168, 85, 247, 0.2); color: white; }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 32px; }
@@ -129,72 +130,70 @@
 
 <section class="hero">
     <h1>Grow Your Business Online 🚀</h1>
-    <p>Premium Websites • SEO • AI Solutions</p>
+    <p>Premium Websites • SEO • AI Agents</p>
     <a href="#contact" class="btn">Start Your Project</a>
 </section>
 
 <section class="section">
     <h2 class="big-text">RELIABLE. RESOURCEFUL. RESOLUTE.</h2>
-    <p style="color: #94a3b8; max-width: 600px; margin: 0 auto;">Helping Zirakpur & Panchkula businesses dominate the digital world with modern tech.</p>
+    <p style="color: #94a3b8; max-width: 600px; margin: 0 auto;">Zirakpur & Panchkula's leading agency for modern digital solutions.</p>
 </section>
 
 <section id="services" class="section">
-    <h2>What We Offer</h2>
+    <h2>Our Core Services</h2>
     <div class="services-grid">
         <div class="card">
             <i class="fas fa-laptop-code"></i>
-            <h3>Web Design</h3>
-            <p>High-speed websites with smooth floating animations.</p>
+            <h3>Custom Websites</h3>
+            <p>High-speed, premium designs for local businesses.</p>
         </div>
         <div class="card">
             <i class="fas fa-robot"></i>
-            <h3>AI Agents</h3>
-            <p>Smart bots to handle your customer leads 24/7.</p>
+            <h3>AI Chatbots</h3>
+            <p>Smart agents that respond to clients 24/7 automatically.</p>
         </div>
         <div class="card">
-            <i class="fas fa-search-location"></i>
-            <h3>Local SEO</h3>
-            <p>Rank #1 on Google Maps in Zirakpur & Panchkula.</p>
+            <i class="fas fa-bullhorn"></i>
+            <h3>Digital Growth</h3>
+            <p>Social Media & Google Ads management for more leads.</p>
         </div>
     </div>
 </section>
-
-<div class="slider-container">
-    <div class="slider-track">
-        <div class="review-card">⭐⭐⭐⭐⭐ "Best agency for doctors!" - <b>Dr. Vikas</b></div>
-        <div class="review-card">⭐⭐⭐⭐⭐ "Our admissions grew 2x." - <b>Little Orchard</b></div>
-        <div class="review-card">⭐⭐⭐⭐⭐ "Highly professional." - <b>Dr. Priyanka</b></div>
-        <div class="review-card">⭐⭐⭐⭐⭐ "Amazing SEO results!" - <b>Ultra Gym</b></div>
-        <div class="review-card">⭐⭐⭐⭐⭐ "Best agency for doctors!" - <b>Dr. Vikas</b></div>
-        <div class="review-card">⭐⭐⭐⭐⭐ "Our admissions grew 2x." - <b>Little Orchard</b></div>
-    </div>
-</div>
 
 <section id="contact" class="section">
     <div class="contact-box">
         <h2 style="margin-top:0;">Free Consultation</h2>
         <form action="https://formsubmit.co/starunsharma67@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Full Name / Business" required>
+            <input type="text" name="name" placeholder="Business Name" required>
             <input type="tel" name="phone" placeholder="WhatsApp Number" required>
-            <textarea name="message" rows="3" placeholder="I want a website for..."></textarea>
-            <button type="submit" class="btn" style="width:100%">Send Request</button>
+            <textarea name="message" rows="3" placeholder="Requirement Details"></textarea>
+            <button type="submit" class="btn" style="width:100%">Submit Requirement</button>
         </form>
     </div>
 </section>
 
 <div id="bot-window">
-    <div style="background:#ec4899; padding:12px; font-weight:bold; display:flex; justify-content:space-between;">
-        Sky-AI Bot 🤖 <span onclick="toggleBot()" style="cursor:pointer">×</span>
+    <div class="chat-header">
+        Sky-AI Assistant 🤖 <span onclick="toggleBot()" style="cursor:pointer">×</span>
     </div>
-    <div id="bot-chat" style="height:220px; padding:15px; overflow-y:auto; font-size:13px; background:#0f172a;">
-        Hi! Main Sky-AI hoon. Kis type ka demo dekhna hai?<br><br>
-        <button onclick="showLink('dentist')" style="width:100%; margin-bottom:5px; background:#1e293b; color:white; border:1px solid #ec4899; padding:6px; cursor:pointer; border-radius:5px;">🦷 Dentist Demo</button>
-        <button onclick="showLink('school')" style="width:100%; margin-bottom:5px; background:#1e293b; color:white; border:1px solid #ec4899; padding:6px; cursor:pointer; border-radius:5px;">🏫 School Demo</button>
+    <div id="bot-chat" class="chat-body">
+        <div class="bot-msg">Hello! Main Sky-AI Assistant hoon. Main aapki kaise madad kar sakta hoon?</div>
+        <div style="display: flex; flex-direction: column; gap: 5px;">
+            <button class="option-btn" onclick="botAnswer('pricing')">💰 Service Pricing</button>
+            <button class="option-btn" onclick="botAnswer('dental')">🦷 Dentist Demo</button>
+            <button class="option-btn" onclick="botAnswer('school')">🏫 Preschool Demo</button>
+            <button class="option-btn" onclick="botAnswer('skin')">✨ Skin Clinic Demo</button>
+        </div>
     </div>
 </div>
 
-<div class="bot-trigger" onclick="toggleBot()"><i class="fas fa-comment-dots"></i></div>
-<a href="https://wa.me/918264804667" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<div class="bot-trigger" onclick="toggleBot()" title="Chat with AI">
+    <i class="fas fa-robot"></i>
+</div>
+
+<a href="https://wa.me/918264804667" class="whatsapp" target="_blank" title="WhatsApp Us">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <footer style="text-align:center; padding:30px; background:#020617; font-size:11px; color:#475569;">
     © 2026 SkyWeb Solutions | Zirakpur | Panchkula
@@ -205,10 +204,22 @@
         var b = document.getElementById('bot-window');
         b.style.display = (b.style.display === 'flex') ? 'none' : 'flex';
     }
-    function showLink(val) {
+
+    function botAnswer(val) {
         var c = document.getElementById('bot-chat');
-        if(val==='dentist') c.innerHTML += "<br><br><b>AI:</b> Dental Demo: <a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#ec4899'>Click Here</a>";
-        if(val==='school') c.innerHTML += "<br><br><b>AI:</b> School Demo: <a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#ec4899'>Click Here</a>";
+        var msg = "";
+
+        if(val === 'pricing') {
+            msg = "Humari pricing ₹3,000 (Website Setup) + ₹500 (Monthly Maintenance) se shuru hoti hai. Ismein domain aur hosting included hai!";
+        } else if(val === 'dental') {
+            msg = "Dr. Vikas Dental Demo: <br><a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#ec4899'>View Demo 🦷</a>";
+        } else if(val === 'school') {
+            msg = "Little Orchard Preschool Demo: <br><a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#ec4899'>View Demo 🏫</a>";
+        } else if(val === 'skin') {
+            msg = "Dr. Priyanka's Skin Clinic Demo: <br><a href='https://tanuu67.github.io/DR-PRIYANKA-SKIN-CLINIC/' target='_blank' style='color:#ec4899'>View Demo ✨</a>";
+        }
+
+        c.innerHTML += `<div class="bot-msg" style="margin-top:10px;">${msg}</div>`;
         c.scrollTop = c.scrollHeight;
     }
 </script>
