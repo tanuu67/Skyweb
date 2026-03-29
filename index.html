@@ -1,98 +1,213 @@
-<style>
-    /* Slider Styling */
-    .testimonials-section {
-        overflow: hidden;
-        padding: 60px 0;
-        background: rgba(255, 255, 255, 0.02);
-        white-space: nowrap;
-        position: relative;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWeb Solutions | Digital Growth Agency Zirakpur</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    .testimonials-track {
-        display: flex;
-        width: calc(300px * 10); /* Adjust based on card count */
-        animation: scrollReviews 30s linear infinite;
-    }
+    <style>
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+        body {
+            margin: 0; font-family: 'Poppins', sans-serif;
+            background: #0f172a; color: white; line-height: 1.6; overflow-x: hidden;
+        }
 
-    .review-card {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 30px;
-        margin: 0 15px;
-        border-radius: 20px;
-        width: 300px;
-        flex-shrink: 0;
-        text-align: left;
-    }
+        /* HEADER */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; position: sticky; top: 0;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .logo {
+            font-size: 24px; font-weight: 700;
+            background: linear-gradient(90deg, #a855f7, #ec4899);
+            -webkit-background-clip: text; color: transparent;
+        }
+        nav a { margin-left: 25px; color: #cbd5e1; text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: #ec4899; }
 
-    .review-card:hover {
-        border-color: #a855f7;
-        background: rgba(255, 255, 255, 0.08);
-    }
+        /* HERO */
+        .hero {
+            text-align: center; padding: 120px 20px;
+            background: radial-gradient(circle at top, #3b0764, #0f172a);
+        }
+        .hero h1 { font-size: 50px; margin-bottom: 15px; }
+        .hero p { font-size: 18px; color: #94a3b8; margin-bottom: 30px; }
 
-    .stars { color: #fbbf24; margin-bottom: 10px; }
-    .client-name { font-weight: 600; color: #ec4899; display: block; margin-top: 15px; font-size: 14px; }
-    .client-org { font-size: 12px; color: #94a3b8; }
+        /* BUTTONS */
+        .btn {
+            padding: 14px 30px; border-radius: 50px;
+            background: linear-gradient(90deg, #a855f7, #ec4899);
+            color: white; text-decoration: none; font-weight: 600;
+            display: inline-block; transition: 0.3s; border: none; cursor: pointer;
+        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4); }
 
-    /* Animation for smooth scrolling */
-    @keyframes scrollReviews {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-300px * 5)); }
-    }
+        /* SECTIONS */
+        .section { padding: 80px 8%; text-align: center; }
+        .big-text {
+            font-size: 38px; font-weight: 700; margin-bottom: 20px;
+            background: linear-gradient(90deg, #a855f7, #ec4899);
+            -webkit-background-clip: text; color: transparent;
+        }
 
-    /* Pause on hover */
-    .testimonials-section:hover .testimonials-track {
-        animation-play-state: paused;
-    }
-</style>
+        /* SERVICES */
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px; margin-top: 50px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 20px; border-radius: 20px; transition: 0.4s;
+        }
+        .card:hover { background: rgba(255, 255, 255, 0.07); transform: translateY(-10px); border-color: #a855f7; }
+        .card i { font-size: 40px; color: #a855f7; margin-bottom: 20px; }
 
-<section class="section" style="padding-bottom: 20px;">
-    <h2>What Our Clients Say</h2>
+        /* TESTIMONIALS SLIDER */
+        .testimonials-track {
+            display: flex; width: 200%; animation: scrollReviews 25s linear infinite;
+        }
+        @keyframes scrollReviews {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .review-card {
+            background: rgba(255,255,255,0.05); padding: 25px; margin: 0 15px;
+            border-radius: 20px; width: 300px; text-align: left; border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* CONTACT FORM */
+        .contact-box {
+            max-width: 500px; margin: 40px auto; background: rgba(255,255,255,0.02);
+            padding: 40px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1);
+        }
+        input, textarea {
+            width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1); background: #1e293b; color: white;
+        }
+
+        /* FLOATING ICONS */
+        .whatsapp {
+            position: fixed; bottom: 30px; right: 30px; background: #25D366;
+            width: 60px; height: 60px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 30px; color: white;
+            text-decoration: none; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .ai-bot-btn {
+            position: fixed; bottom: 30px; left: 30px; background: linear-gradient(90deg,#a855f7,#ec4899);
+            width: 60px; height: 60px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 25px; color: white;
+            cursor: pointer; z-index: 1000; box-shadow: 0 5px 15px rgba(168,85,247,0.4);
+        }
+
+        /* AI CHAT WINDOW */
+        #ai-chat-window {
+            position: fixed; bottom: 100px; left: 30px; width: 300px;
+            background: #1e293b; border-radius: 20px; border: 1px solid #a855f7;
+            display: none; flex-direction: column; overflow: hidden; z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">SkyWeb Solutions</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1 data-aos="fade-down">Grow Your Business Online 🚀</h1>
+    <p data-aos="fade-up">Premium Websites • SEO • AI Chatbots</p>
+    <a href="#contact" class="btn">Start Your Project</a>
 </section>
 
-<div class="testimonials-section">
-    <div class="testimonials-track">
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p style="white-space: normal;">"SkyWeb built a professional site for my clinic. Highly recommended for doctors in Zirakpur!"</p>
-            <span class="client-name">Dr. Vikas</span>
-            <span class="client-org">Dr. Vikas Dental</span>
-        </div>
+<section class="section">
+    <h2 class="big-text" data-aos="zoom-in">RELIABLE. RESOURCEFUL. RESOLUTE.</h2>
+    <p style="color: #94a3b8;">Helping Zirakpur & Panchkula businesses dominate the digital world.</p>
+</section>
 
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p style="white-space: normal;">"The best digital agency for schools. Our admissions increased significantly this year."</p>
-            <span class="client-name">Principal Sharma</span>
-            <span class="client-org">Little Orchard Preschool</span>
+<section id="services" class="section">
+    <h2>Our Specializations</h2>
+    <div class="services-grid">
+        <div class="card" data-aos="fade-up">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Design</h3>
+            <p>Modern floating animations & mobile-friendly designs.</p>
         </div>
-
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p style="white-space: normal;">"Modern design and great SEO. My skin clinic ranking is on the first page of Google."</p>
-            <span class="client-name">Dr. Priyanka Gupta</span>
-            <span class="client-org">Skin & Hair Clinic</span>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-robot"></i>
+            <h3>AI Agents</h3>
+            <p>Smart chatbots that handle your leads 24/7.</p>
         </div>
-
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p style="white-space: normal;">"Energetic team! They handle my gym's social media perfectly. 5 stars!"</p>
-            <span class="client-name">Manager Singh</span>
-            <span class="client-org">Ultra Fitness Gym</span>
-        </div>
-
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p style="white-space: normal;">"Transparent pricing and very supportive team. Best for local businesses."</p>
-            <span class="client-name">Tarun Sharma</span>
-            <span class="client-org">SkyWeb Client</span>
-        </div>
-
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <p style="white-space: normal;">"SkyWeb built a professional site for my clinic. Highly recommended!"</p>
-            <span class="client-name">Dr. Vikas</span>
-            <span class="client-org">Dr. Vikas Dental</span>
+        <div class="card" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-bullseye"></i>
+            <h3>Local SEO</h3>
+            <p>Get ranked on the first page of Google Maps.</p>
         </div>
     </div>
+</section>
+
+<div class="section" style="overflow:hidden; padding: 40px 0;">
+    <div class="testimonials-track">
+        <div class="review-card">⭐⭐⭐⭐⭐ "Best agency for doctors!" - <b>Dr. Vikas</b></div>
+        <div class="review-card">⭐⭐⭐⭐⭐ "Our admissions grew 2x." - <b>Little Orchard</b></div>
+        <div class="review-card">⭐⭐⭐⭐⭐ "Highly professional team." - <b>Dr. Priyanka</b></div>
+        <div class="review-card">⭐⭐⭐⭐⭐ "Amazing SEO results!" - <b>Ultra Gym</b></div>
+        <div class="review-card">⭐⭐⭐⭐⭐ "Best agency for doctors!" - <b>Dr. Vikas</b></div>
+        <div class="review-card">⭐⭐⭐⭐⭐ "Our admissions grew 2x." - <b>Little Orchard</b></div>
+    </div>
 </div>
+
+<section id="contact" class="section">
+    <div class="contact-box" data-aos="zoom-in">
+        <h2>Get a Free Demo</h2>
+        <form action="https://formsubmit.co/starunsharma67@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Business Name" required>
+            <input type="tel" name="phone" placeholder="WhatsApp Number" required>
+            <textarea name="message" rows="3" placeholder="Tell us your requirement"></textarea>
+            <button type="submit" class="btn" style="width:100%">Send Request</button>
+        </form>
+    </div>
+</section>
+
+<div id="ai-chat-window">
+    <div style="background:linear-gradient(90deg,#a855f7,#ec4899); padding:15px; font-weight:bold;">Sky-AI Assistant 🤖</div>
+    <div id="chat-content" style="height:250px; padding:15px; overflow-y:auto; font-size:14px; background:#0f172a;">
+        Hi! Main Sky-AI hoon. Aapko kis type ka demo dekhna hai?<br><br>
+        <button onclick="botMsg('dentist')" style="width:100%; margin-bottom:5px; background:#1e293b; color:white; border:1px solid #a855f7; padding:5px; cursor:pointer;">🦷 Dentist Demo</button>
+        <button onclick="botMsg('school')" style="width:100%; margin-bottom:5px; background:#1e293b; color:white; border:1px solid #a855f7; padding:5px; cursor:pointer;">🏫 School Demo</button>
+    </div>
+</div>
+
+<div class="ai-bot-btn" onclick="toggleChat()"><i class="fas fa-robot"></i></div>
+<a href="https://wa.me/918264804667" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+<footer style="text-align:center; padding:30px; background:#020617; font-size:12px; opacity:0.6;">
+    © 2026 SkyWeb Solutions | Zirakpur | Panchkula
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+    function toggleChat() {
+        var win = document.getElementById('ai-chat-window');
+        win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+    }
+    function botMsg(type) {
+        var content = document.getElementById('chat-content');
+        if(type==='dentist') content.innerHTML += "<br><b>AI:</b> Dr. Vikas Dental Demo dekhein: <a href='https://tanuu67.github.io/DR.-VIKAS-DENTAL/' target='_blank' style='color:#ec4899'>Link</a>";
+        if(type==='school') content.innerHTML += "<br><b>AI:</b> Little Orchard Demo dekhein: <a href='https://tanuu67.github.io/LITTLE-ORCHARD-PRESCHOOL/' target='_blank' style='color:#ec4899'>Link</a>";
+    }
+</script>
+
+</body>
+</html>
