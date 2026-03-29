@@ -1,286 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SkyWeb Solutions</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-body {
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:white;
-}
+    /* Slider Styling */
+    .testimonials-section {
+        overflow: hidden;
+        padding: 60px 0;
+        background: rgba(255, 255, 255, 0.02);
+        white-space: nowrap;
+        position: relative;
+    }
 
-/* HEADER */
-header {
-    display:flex;
-    justify-content:space-between;
-    padding:15px 40px;
-}
-.logo {
-    font-size:22px;
-    font-weight:700;
-    background:linear-gradient(90deg,#a855f7,#ec4899);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-nav a {
-    margin:10px;
-    color:white;
-    text-decoration:none;
-}
+    .testimonials-track {
+        display: flex;
+        width: calc(300px * 10); /* Adjust based on card count */
+        animation: scrollReviews 30s linear infinite;
+    }
 
-/* HERO */
-.hero {
-    text-align:center;
-    padding:100px 20px;
-    background: radial-gradient(circle at top, #7c3aed, #0f172a);
-}
-.hero h1 {
-    font-size:42px;
-    animation:slideUp 1s ease;
-}
+    .review-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        margin: 0 15px;
+        border-radius: 20px;
+        width: 300px;
+        flex-shrink: 0;
+        text-align: left;
+    }
 
-/* BUTTON */
-.btn {
-    padding:12px 20px;
-    border-radius:8px;
-    background:linear-gradient(90deg,#a855f7,#ec4899);
-    color:white;
-    text-decoration:none;
-    display:inline-block;
-    margin-top:20px;
-}
+    .review-card:hover {
+        border-color: #a855f7;
+        background: rgba(255, 255, 255, 0.08);
+    }
 
-/* SECTION */
-.section {
-    padding:70px 20px;
-    text-align:center;
-}
+    .stars { color: #fbbf24; margin-bottom: 10px; }
+    .client-name { font-weight: 600; color: #ec4899; display: block; margin-top: 15px; font-size: 14px; }
+    .client-org { font-size: 12px; color: #94a3b8; }
 
-/* PREMIUM TEXT */
-.big-text {
-    font-size:34px;
-    font-weight:700;
-    background:linear-gradient(90deg,#a855f7,#ec4899);
-    -webkit-background-clip:text;
-    color:transparent;
-    animation:slideUp 1s ease;
-}
-.fade-text {
-    max-width:700px;
-    margin:auto;
-    color:#cbd5f5;
-}
+    /* Animation for smooth scrolling */
+    @keyframes scrollReviews {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-300px * 5)); }
+    }
 
-/* SERVICES */
-.services {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-.card {
-    background:rgba(255,255,255,0.05);
-    margin:15px;
-    padding:20px;
-    border-radius:12px;
-    width:250px;
-    transition:0.3s;
-}
-.card:hover {
-    transform:translateY(-10px);
-    box-shadow:0 0 20px #a855f7;
-}
-
-/* PORTFOLIO */
-.portfolio {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-.work-card {
-    position:relative;
-    margin:15px;
-    border-radius:12px;
-    overflow:hidden;
-}
-.work-card img {
-    width:300px;
-    height:200px;
-    object-fit:cover;
-}
-.overlay {
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.7);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    transition:0.3s;
-}
-.work-card:hover .overlay {
-    opacity:1;
-}
-
-/* TESTIMONIAL */
-.review {
-    background:rgba(255,255,255,0.05);
-    padding:15px;
-    margin:10px;
-    border-radius:10px;
-}
-
-/* FORM */
-input, textarea {
-    width:260px;
-    padding:10px;
-    margin:5px;
-    border-radius:5px;
-    border:none;
-}
-
-/* CONTACT */
-.contact {
-    background:#020617;
-    padding:50px;
-}
-
-/* WHATSAPP */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-}
-
-/* ANIMATION */
-@keyframes slideUp {
-    from {transform:translateY(40px);opacity:0;}
-    to {transform:translateY(0);opacity:1;}
-}
-
-/* MOBILE */
-@media(max-width:768px){
-.services,.portfolio{flex-direction:column}
-}
+    /* Pause on hover */
+    .testimonials-section:hover .testimonials-track {
+        animation-play-state: paused;
+    }
 </style>
-</head>
 
-<body>
-
-<header>
-<div class="logo">SkyWeb Solutions</div>
-<nav>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#portfolio">Work</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-<h1>Grow Your Business Online 🚀</h1>
-<p>Website • SEO • Social Media</p>
-<a class="btn" href="https://wa.me/918264804667">Get Free Demo</a>
+<section class="section" style="padding-bottom: 20px;">
+    <h2>What Our Clients Say</h2>
 </section>
 
-<!-- PREMIUM TEXT -->
-<section class="section">
-<h2 class="big-text">DIGITALLY RELIABLE, RESOURCEFUL AND RESOLUTE</h2>
-<p class="fade-text">
-We empower your brand with creative design, engaging content, and powerful marketing.
-</p>
-</section>
+<div class="testimonials-section">
+    <div class="testimonials-track">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p style="white-space: normal;">"SkyWeb built a professional site for my clinic. Highly recommended for doctors in Zirakpur!"</p>
+            <span class="client-name">Dr. Vikas</span>
+            <span class="client-org">Dr. Vikas Dental</span>
+        </div>
 
-<!-- SERVICES -->
-<section id="services" class="section">
-<h2>Our Services</h2>
-<div class="services">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p style="white-space: normal;">"The best digital agency for schools. Our admissions increased significantly this year."</p>
+            <span class="client-name">Principal Sharma</span>
+            <span class="client-org">Little Orchard Preschool</span>
+        </div>
 
-<div class="card">🌐 Website Development</div>
-<div class="card">📈 SEO Optimization</div>
-<div class="card">📱 Social Media Handling</div>
-<div class="card">🎨 Graphic Designing</div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p style="white-space: normal;">"Modern design and great SEO. My skin clinic ranking is on the first page of Google."</p>
+            <span class="client-name">Dr. Priyanka Gupta</span>
+            <span class="client-org">Skin & Hair Clinic</span>
+        </div>
 
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p style="white-space: normal;">"Energetic team! They handle my gym's social media perfectly. 5 stars!"</p>
+            <span class="client-name">Manager Singh</span>
+            <span class="client-org">Ultra Fitness Gym</span>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p style="white-space: normal;">"Transparent pricing and very supportive team. Best for local businesses."</p>
+            <span class="client-name">Tarun Sharma</span>
+            <span class="client-org">SkyWeb Client</span>
+        </div>
+
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p style="white-space: normal;">"SkyWeb built a professional site for my clinic. Highly recommended!"</p>
+            <span class="client-name">Dr. Vikas</span>
+            <span class="client-org">Dr. Vikas Dental</span>
+        </div>
+    </div>
 </div>
-</section>
-
-<!-- OUR WORK -->
-<section id="portfolio" class="section">
-<h2>Our Work</h2>
-
-<div class="portfolio">
-
-<div class="work-card">
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
-<div class="overlay">
-<h3>Website Development</h3>
-<p>Business Website</p>
-</div>
-</div>
-
-<div class="work-card">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<div class="overlay">
-<h3>SEO Optimization</h3>
-<p>Google Ranking</p>
-</div>
-</div>
-
-<div class="work-card">
-<img src="https://images.unsplash.com/photo-1557838923-2985c318be48">
-<div class="overlay">
-<h3>Social Media</h3>
-<p>Growth Marketing</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="section">
-<h2>Client Reviews</h2>
-<div class="review">⭐️⭐️⭐️⭐️⭐️ Great Service</div>
-<div class="review">⭐️⭐️⭐️⭐️⭐️ Highly Recommended</div>
-</section>
-
-<!-- FORM -->
-<section class="section">
-<h2>Get Free Consultation</h2>
-
-<form action="https://formsubmit.co/starunsharma67@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Your Name" required><br>
-<input type="text" name="phone" placeholder="Phone Number" required><br>
-<textarea name="message" placeholder="Requirement"></textarea><br>
-
-<button class="btn">Submit</button>
-<input type="hidden" name="_captcha" value="false">
-</form>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>📞 8264804667</p>
-<p>📧 starunsharma67@gmail.com</p>
-</section>
-
-<footer style="text-align:center;padding:15px;background:#020617;">
-© 2026 SkyWeb Solutions
-</footer>
-
-<a href="https://wa.me/918264804667" class="whatsapp">💬</a>
-
-</body>
-</html>
